@@ -47,22 +47,20 @@ public class View extends Application
         solutionPane.setPrefSize(WIDTH, HEIGHT*0.33);
         solutionPane.setMinSize(WIDTH, HEIGHT*0.33);
 
-        System.out.println(solutionPane.getWidth());
-        System.out.println(solutionPane.getPrefWidth());
-
+        //Buttons Row
         HBox buttonsBox = new HBox();
         buttonsBox.setSpacing(1);
 
         Button prevBtn = new Button("PREV");
-        prevBtn.setPrefSize(solutionPane.getPrefWidth()/4, solutionPane.getPrefHeight()/4);
+        prevBtn.setPrefSize(solutionPane.getPrefWidth()/4, solutionPane.getPrefHeight()*0.1);
 
         Label answerLbl = new Label("Correct!");
-        answerLbl.setPrefSize(solutionPane.getPrefWidth()/2, solutionPane.getPrefHeight()/4);
+        answerLbl.setPrefSize(solutionPane.getPrefWidth()/2, solutionPane.getPrefHeight()*0.1);
         answerLbl.setAlignment(Pos.CENTER);
         answerLbl.setTextFill(Paint.valueOf("WHITE"));
 
         Button nextBtn = new Button("NEXT");
-        nextBtn.setPrefSize(solutionPane.getPrefWidth()/4, solutionPane.getPrefHeight()/4);
+        nextBtn.setPrefSize(solutionPane.getPrefWidth()/4, solutionPane.getPrefHeight()*0.1);
 
         buttonsBox.getChildren().addAll(prevBtn, answerLbl, nextBtn);
         buttonsBox.setMargin(prevBtn, hboxInsets);
@@ -72,87 +70,126 @@ public class View extends Application
         solutionPane.getChildren().add(buttonsBox);
         solutionPane.setMargin(buttonsBox, vboxInsets);
 
+        //Answer Box Row
         HBox answerBox = new HBox();
         answerBox.setSpacing(1);
 
-        Rectangle leftRectInput = new Rectangle();
-        leftRectInput.setWidth(solutionPane.getPrefWidth()/4);
-        leftRectInput.setHeight(solutionPane.getPrefHeight()/4);
-        leftRectInput.setFill(Paint.valueOf("grey"));
-
         TextField inputText = new TextField();
-        inputText.setPrefSize(solutionPane.getPrefWidth()/2, solutionPane.getPrefHeight()/4);
+        inputText.setPrefSize(solutionPane.getPrefWidth()/2, solutionPane.getPrefHeight()*0.1);
 
-        Rectangle rightRectInput = new Rectangle();
-        rightRectInput.setWidth(solutionPane.getPrefWidth()/4);
-        rightRectInput.setHeight(solutionPane.getPrefHeight()/4);
-        rightRectInput.setFill(Paint.valueOf("grey"));
-
-        answerBox.getChildren().addAll(leftRectInput, inputText, rightRectInput);
-        answerBox.setMargin(leftRectInput, hboxInsets);
-        answerBox.setMargin(inputText, hboxInsets);
-        answerBox.setMargin(rightRectInput, hboxInsets);
+        answerBox.getChildren().addAll(inputText);
+        answerBox.setMargin(inputText, new Insets(5, solutionPane.getPrefWidth()/4, 5, solutionPane.getPrefWidth()/4));
 
         solutionPane.getChildren().add(answerBox);
         solutionPane.setMargin(answerBox, vboxInsets);
 
+        double buttonWidth = solutionPane.getPrefWidth();
+        double buttonHeight = solutionPane.getPrefHeight()*0.2;
 
-        HBox lettersBox = new HBox();
-        lettersBox.setSpacing(1);
+        //Keyboard Layer 1
+        HBox keyboardLayerOneBox = new HBox();
+        keyboardLayerOneBox.setSpacing(0);
+        keyboardLayerOneBox.setPrefSize(solutionPane.getPrefWidth(), solutionPane.getPrefHeight()*0.2);
 
-        //Look into if needing these, maybe play with margins?
-        Rectangle leftRectLetters = new Rectangle();
-        leftRectLetters.setWidth(solutionPane.getPrefWidth()/4);
-        leftRectLetters.setHeight(solutionPane.getPrefHeight()/2);
-        leftRectLetters.setFill(Paint.valueOf("grey"));
+        double buttonWidthModifier = 0.1;
 
-        //Change to a Hbox for the possible letters
-        TextField inputTextd = new TextField();
-        inputTextd.setPrefSize(solutionPane.getPrefWidth()/2, solutionPane.getPrefHeight()/2);
+        Button letterQ = new Button("Q");
+        letterQ.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterW = new Button("W");
+        letterW.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterE = new Button("E");
+        letterE.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterR = new Button("R");
+        letterR.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterT = new Button("T");
+        letterT.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterY = new Button("Y");
+        letterY.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterU = new Button("U");
+        letterU.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterI = new Button("I");
+        letterI.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterO = new Button("O");
+        letterO.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        Button letterP = new Button("P");
+        letterP.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
 
-        //Maybe keep? HBox decides?
-        Rectangle rightRectLetters = new Rectangle();
-        rightRectLetters.setWidth(solutionPane.getPrefWidth()/4);
-        rightRectLetters.setHeight(solutionPane.getPrefHeight()/2);
-        rightRectLetters.setFill(Paint.valueOf("grey"));
+        keyboardLayerOneBox.getChildren().addAll(letterQ, letterW, letterE, letterR, letterT, letterY, letterU, letterI, letterO, letterP);
+        Insets lol = new Insets(0, 0, 0, 0);
+        keyboardLayerOneBox.setMargin(letterQ, lol);
+        keyboardLayerOneBox.setMargin(letterW, lol);
+        keyboardLayerOneBox.setMargin(letterE, lol);
+        keyboardLayerOneBox.setMargin(letterR, lol);
+        keyboardLayerOneBox.setMargin(letterT, lol);
+        keyboardLayerOneBox.setMargin(letterY, lol);
+        keyboardLayerOneBox.setMargin(letterU, lol);
+        keyboardLayerOneBox.setMargin(letterI, lol);
+        keyboardLayerOneBox.setMargin(letterO, lol);
+        keyboardLayerOneBox.setMargin(letterP, lol);
 
-        lettersBox.getChildren().addAll(leftRectLetters, inputTextd, rightRectLetters);
-        lettersBox.setMargin(leftRectLetters, hboxInsets);
-        lettersBox.setMargin(inputTextd, hboxInsets);
-        lettersBox.setMargin(rightRectLetters, hboxInsets);
+        solutionPane.getChildren().add(keyboardLayerOneBox);
+        solutionPane.setMargin(keyboardLayerOneBox, vboxInsets);
 
-        solutionPane.getChildren().add(lettersBox);
-        solutionPane.setMargin(lettersBox, vboxInsets);
+        //Keyboard Layer 2
+        HBox keyboardLayerTwoBox = new HBox();
+        keyboardLayerTwoBox.setSpacing(0);
+//        keyboardLayerTwoBox.setPrefSize(solutionPane.getPrefWidth(), solutionPane.getPrefHeight()*0.2);
 
+        Button letterA = new Button("A");
+        Button letterS = new Button("S");
+        Button letterD = new Button("D");
+        Button letterF = new Button("F");
+        Button letterG = new Button("G");
+        Button letterH = new Button("H");
+        Button letterJ = new Button("J");
+        Button letterK = new Button("K");
+        Button letterL = new Button("L");
 
+        keyboardLayerTwoBox.getChildren().addAll(letterA, letterS, letterD, letterF, letterG, letterH, letterJ, letterK, letterL);
+        Insets lolTwo = new Insets(0, 0, 0, 0);
+        keyboardLayerTwoBox.setMargin(letterA, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterS, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterD, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterF, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterG, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterH, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterJ, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterK, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterL, lolTwo);
 
-//        Button prevBtn = new Button("PREV");
-//        prevBtn.setPrefSize(solutionPane.getWidth()/3, solutionPane.getHeight()/3);
-//        solutionPane.add(prevBtn, 0, 0);
-//
-//        Label answerLbl = new Label("Correct!");
-//        answerLbl.setPrefSize(solutionPane.getWidth()/3, solutionPane.getHeight()/3);
-//        answerLbl.setAlignment(Pos.CENTER);
-//        answerLbl.setTextFill(Paint.valueOf("WHITE"));
-//        solutionPane.add(answerLbl, 1, 0);
-//
-//        Button nextBtn = new Button("NEXT");
-//        nextBtn.setPrefSize(solutionPane.getWidth()/3, solutionPane.getHeight()/3);
-//
-//        Pane blankLeftPane = new Pane();
-//        blankLeftPane.setPrefSize(solutionPane.getWidth()/3, solutionPane.getHeight()/3);
-//        blankLeftPane.setMinSize(solutionPane.getWidth()/3, solutionPane.getHeight()/3);
-//
-//        Rectangle blankLeftBox = new Rectangle(solutionPane.getWidth()/3, solutionPane.getHeight()/3);
-//        blankLeftBox.setFill(Paint.valueOf("blue"));
-//        blankLeftPane.getChildren().add(blankLeftBox);
-//
-//        solutionPane.add(blankLeftPane, 0, 1);
+        solutionPane.getChildren().add(keyboardLayerTwoBox);
+        solutionPane.setMargin(keyboardLayerTwoBox, vboxInsets);
+
+        //Keyboard Layer 3
+        HBox keyboardLayerThreeBox = new HBox();
+        keyboardLayerThreeBox.setSpacing(0);
+//        keyboardLayerThreeBox.setPrefSize(solutionPane.getPrefWidth(), solutionPane.getPrefHeight()*0.2);
+
+        Button letterZ = new Button("Z");
+        Button letterX = new Button("X");
+        Button letterC = new Button("C");
+        Button letterV = new Button("V");
+        Button letterB = new Button("B");
+        Button letterN = new Button("N");
+        Button letterM = new Button("M");
+
+        keyboardLayerThreeBox.getChildren().addAll(letterZ, letterX, letterC, letterV, letterB, letterN, letterM);
+        Insets lolThree = new Insets(0, 0, 0, 0);
+        keyboardLayerThreeBox.setMargin(letterZ, lolThree);
+        keyboardLayerThreeBox.setMargin(letterX, lolThree);
+        keyboardLayerThreeBox.setMargin(letterC, lolThree);
+        keyboardLayerThreeBox.setMargin(letterV, lolThree);
+        keyboardLayerThreeBox.setMargin(letterB, lolThree);
+        keyboardLayerThreeBox.setMargin(letterN, lolThree);
+        keyboardLayerThreeBox.setMargin(letterM, lolThree);
+
+        solutionPane.getChildren().add(keyboardLayerThreeBox);
+        solutionPane.setMargin(keyboardLayerThreeBox, vboxInsets);
+
 
         BorderPane root = new BorderPane();
         root.setPrefSize(WIDTH, HEIGHT);
         root.setMinSize(WIDTH, HEIGHT);
-//        root.setMaxSize(WIDTH, HEIGHT);
         root.setCenter(sentencePane);
         root.setBottom(solutionPane);
 
