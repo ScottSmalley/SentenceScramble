@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 
 import java.util.TreeMap;
 
@@ -18,8 +19,9 @@ import java.util.TreeMap;
 //To build out the Keyboard GUI
 public class HighlightedKeyboard
 {
-    public static Insets vboxInsets = new Insets(0, 0, 0, 0);
-    public static Insets hboxInsets = new Insets(5, 5, 5, 5);
+    private static Insets vboxInsets = new Insets(0, 0, 0, 0);
+    private static Insets hboxInsets = new Insets(5, 5, 5, 5);
+    private static Insets keyboardInsets = new Insets(0, 0, 0, 0);
 
     private TextField inputText;
     private Label answerLbl;
@@ -122,20 +124,19 @@ public class HighlightedKeyboard
         letterP.setOnAction(event -> inputText.appendText("P"));
 
         keyboardLayerOneBox.getChildren().addAll(letterQ, letterW, letterE, letterR, letterT, letterY, letterU, letterI, letterO, letterP);
-        Insets lol = new Insets(0, 0, 0, 0);
-        keyboardLayerOneBox.setMargin(letterQ, lol);
-        keyboardLayerOneBox.setMargin(letterW, lol);
-        keyboardLayerOneBox.setMargin(letterE, lol);
-        keyboardLayerOneBox.setMargin(letterR, lol);
-        keyboardLayerOneBox.setMargin(letterT, lol);
-        keyboardLayerOneBox.setMargin(letterY, lol);
-        keyboardLayerOneBox.setMargin(letterU, lol);
-        keyboardLayerOneBox.setMargin(letterI, lol);
-        keyboardLayerOneBox.setMargin(letterO, lol);
-        keyboardLayerOneBox.setMargin(letterP, lol);
+        keyboardLayerOneBox.setMargin(letterQ, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterW, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterE, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterR, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterT, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterY, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterU, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterI, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterO, keyboardInsets);
+        keyboardLayerOneBox.setMargin(letterP, keyboardInsets);
 
         solutionBox.getChildren().add(keyboardLayerOneBox);
-        solutionBox.setMargin(keyboardLayerOneBox, new Insets(0, solutionBox.getPrefWidth() * 0.05, 0, solutionBox.getPrefWidth() * 0.05));
+        solutionBox.setMargin(keyboardLayerOneBox, new Insets(0, solutionBox.getPrefWidth() * 0.00625, 0, solutionBox.getPrefWidth() * 0.00625));
 
         //Keyboard Layer 2
         HBox keyboardLayerTwoBox = new HBox();
@@ -178,19 +179,18 @@ public class HighlightedKeyboard
         letterL.setOnAction(event -> inputText.appendText("L"));
 
         keyboardLayerTwoBox.getChildren().addAll(letterA, letterS, letterD, letterF, letterG, letterH, letterJ, letterK, letterL);
-        Insets lolTwo = new Insets(0, 0, 0, 0);
-        keyboardLayerTwoBox.setMargin(letterA, lolTwo);
-        keyboardLayerTwoBox.setMargin(letterS, lolTwo);
-        keyboardLayerTwoBox.setMargin(letterD, lolTwo);
-        keyboardLayerTwoBox.setMargin(letterF, lolTwo);
-        keyboardLayerTwoBox.setMargin(letterG, lolTwo);
-        keyboardLayerTwoBox.setMargin(letterH, lolTwo);
-        keyboardLayerTwoBox.setMargin(letterJ, lolTwo);
-        keyboardLayerTwoBox.setMargin(letterK, lolTwo);
-        keyboardLayerTwoBox.setMargin(letterL, lolTwo);
+        keyboardLayerTwoBox.setMargin(letterA, keyboardInsets);
+        keyboardLayerTwoBox.setMargin(letterS, keyboardInsets);
+        keyboardLayerTwoBox.setMargin(letterD, keyboardInsets);
+        keyboardLayerTwoBox.setMargin(letterF, keyboardInsets);
+        keyboardLayerTwoBox.setMargin(letterG, keyboardInsets);
+        keyboardLayerTwoBox.setMargin(letterH, keyboardInsets);
+        keyboardLayerTwoBox.setMargin(letterJ, keyboardInsets);
+        keyboardLayerTwoBox.setMargin(letterK, keyboardInsets);
+        keyboardLayerTwoBox.setMargin(letterL, keyboardInsets);
 
         solutionBox.getChildren().add(keyboardLayerTwoBox);
-        solutionBox.setMargin(keyboardLayerTwoBox, new Insets(0, solutionBox.getPrefWidth() * 0.1, 0, solutionBox.getPrefWidth() * 0.1));
+        solutionBox.setMargin(keyboardLayerTwoBox, new Insets(0, solutionBox.getPrefWidth() * 0.05, 0, solutionBox.getPrefWidth() * 0.05));
 
         //Keyboard Layer 3
         HBox keyboardLayerThreeBox = new HBox();
@@ -225,14 +225,13 @@ public class HighlightedKeyboard
         letterM.setOnAction(event -> inputText.appendText("M"));
 
         keyboardLayerThreeBox.getChildren().addAll(letterZ, letterX, letterC, letterV, letterB, letterN, letterM);
-        Insets lolThree = new Insets(0, 0, 0, 0);
-        keyboardLayerThreeBox.setMargin(letterZ, lolThree);
-        keyboardLayerThreeBox.setMargin(letterX, lolThree);
-        keyboardLayerThreeBox.setMargin(letterC, lolThree);
-        keyboardLayerThreeBox.setMargin(letterV, lolThree);
-        keyboardLayerThreeBox.setMargin(letterB, lolThree);
-        keyboardLayerThreeBox.setMargin(letterN, lolThree);
-        keyboardLayerThreeBox.setMargin(letterM, lolThree);
+        keyboardLayerThreeBox.setMargin(letterZ, keyboardInsets);
+        keyboardLayerThreeBox.setMargin(letterX, keyboardInsets);
+        keyboardLayerThreeBox.setMargin(letterC, keyboardInsets);
+        keyboardLayerThreeBox.setMargin(letterV, keyboardInsets);
+        keyboardLayerThreeBox.setMargin(letterB, keyboardInsets);
+        keyboardLayerThreeBox.setMargin(letterN, keyboardInsets);
+        keyboardLayerThreeBox.setMargin(letterM, keyboardInsets);
 
         solutionBox.getChildren().add(keyboardLayerThreeBox);
         solutionBox.setMargin(keyboardLayerThreeBox, new Insets(0, solutionBox.getPrefWidth() * 0.15, 0, solutionBox.getPrefWidth() * 0.15));
