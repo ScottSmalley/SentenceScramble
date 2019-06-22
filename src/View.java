@@ -94,25 +94,25 @@ public class View extends Application
         double buttonWidthModifier = 0.1;
 
         Button letterQ = new Button("Q");
-        letterQ.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterQ.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterW = new Button("W");
-        letterW.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterW.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterE = new Button("E");
-        letterE.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterE.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterR = new Button("R");
-        letterR.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterR.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterT = new Button("T");
-        letterT.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterT.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterY = new Button("Y");
-        letterY.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterY.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterU = new Button("U");
-        letterU.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterU.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterI = new Button("I");
-        letterI.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterI.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterO = new Button("O");
-        letterO.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterO.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterP = new Button("P");
-        letterP.setPrefSize(buttonWidth*buttonWidthModifier, buttonHeight);
+        letterP.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
 
         keyboardLayerOneBox.getChildren().addAll(letterQ, letterW, letterE, letterR, letterT, letterY, letterU, letterI, letterO, letterP);
         Insets lol = new Insets(0, 0, 0, 0);
@@ -128,7 +128,8 @@ public class View extends Application
         keyboardLayerOneBox.setMargin(letterP, lol);
 
         solutionPane.getChildren().add(keyboardLayerOneBox);
-        solutionPane.setMargin(keyboardLayerOneBox, vboxInsets);
+        solutionPane.setMargin(keyboardLayerOneBox, new Insets(0, solutionPane.getPrefWidth() * 0.05, 0, solutionPane.getPrefWidth() * 0.05));
+//        solutionPane.setMargin(keyboardLayerOneBox, vboxInsets);
 
         //Keyboard Layer 2
         HBox keyboardLayerTwoBox = new HBox();
@@ -136,14 +137,23 @@ public class View extends Application
 //        keyboardLayerTwoBox.setPrefSize(solutionPane.getPrefWidth(), solutionPane.getPrefHeight()*0.2);
 
         Button letterA = new Button("A");
+        letterA.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterS = new Button("S");
+        letterS.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterD = new Button("D");
+        letterD.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterF = new Button("F");
+        letterF.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterG = new Button("G");
+        letterG.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterH = new Button("H");
+        letterH.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterJ = new Button("J");
+        letterJ.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterK = new Button("K");
+        letterK.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterL = new Button("L");
+        letterL.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
 
         keyboardLayerTwoBox.getChildren().addAll(letterA, letterS, letterD, letterF, letterG, letterH, letterJ, letterK, letterL);
         Insets lolTwo = new Insets(0, 0, 0, 0);
@@ -158,7 +168,8 @@ public class View extends Application
         keyboardLayerTwoBox.setMargin(letterL, lolTwo);
 
         solutionPane.getChildren().add(keyboardLayerTwoBox);
-        solutionPane.setMargin(keyboardLayerTwoBox, vboxInsets);
+        solutionPane.setMargin(keyboardLayerTwoBox, new Insets(0, solutionPane.getPrefWidth() * 0.1, 0, solutionPane.getPrefWidth() * 0.1));
+//        solutionPane.setMargin(keyboardLayerTwoBox, vboxInsets);
 
         //Keyboard Layer 3
         HBox keyboardLayerThreeBox = new HBox();
@@ -166,12 +177,19 @@ public class View extends Application
 //        keyboardLayerThreeBox.setPrefSize(solutionPane.getPrefWidth(), solutionPane.getPrefHeight()*0.2);
 
         Button letterZ = new Button("Z");
+        letterZ.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterX = new Button("X");
+        letterX.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterC = new Button("C");
+        letterC.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterV = new Button("V");
+        letterV.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterB = new Button("B");
+        letterB.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterN = new Button("N");
+        letterN.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
         Button letterM = new Button("M");
+        letterM.setPrefSize(buttonWidth * buttonWidthModifier, buttonHeight);
 
         keyboardLayerThreeBox.getChildren().addAll(letterZ, letterX, letterC, letterV, letterB, letterN, letterM);
         Insets lolThree = new Insets(0, 0, 0, 0);
@@ -184,7 +202,8 @@ public class View extends Application
         keyboardLayerThreeBox.setMargin(letterM, lolThree);
 
         solutionPane.getChildren().add(keyboardLayerThreeBox);
-        solutionPane.setMargin(keyboardLayerThreeBox, vboxInsets);
+        solutionPane.setMargin(keyboardLayerThreeBox, new Insets(0, solutionPane.getPrefWidth() * 0.15, 0, solutionPane.getPrefWidth() * 0.15));
+//        solutionPane.setMargin(keyboardLayerThreeBox, vboxInsets);
 
 
         BorderPane root = new BorderPane();
