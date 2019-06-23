@@ -1,3 +1,5 @@
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -42,7 +44,7 @@ public class HighlightedKeyboard
             switchAnswer();
         });
 
-        answerLbl = new Label("Correct!");
+        answerLbl = new Label("Orig");
         answerLbl.setPrefSize(solutionBox.getPrefWidth()/2, solutionBox.getPrefHeight()*0.1);
         answerLbl.setAlignment(Pos.CENTER);
         answerLbl.setTextFill(Paint.valueOf("WHITE"));
@@ -66,6 +68,23 @@ public class HighlightedKeyboard
         inputText = new TextField();
         inputText.setPrefSize(solutionBox.getPrefWidth()/2, solutionBox.getPrefHeight()*0.1);
         inputText.setEditable(false);
+        inputText.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                //ABRITRARY NUMBER NEEDS A WAY TO HAVE ACCESS, GLOBAL??
+                //newValue.length() >= currentWord.length()(Global?) && newValue.equals(currentWord)
+                if (newValue.length() >= 4)
+                {
+                    //Change answerLbl to Correct!
+//                    System.out.println("Correct!");
+                    answerLbl.setText("Correct!");
+                }
+                else
+                {
+                    answerLbl.setText("INCORRECT");
+                }
+            }
+        });
 
         answerBox.getChildren().addAll(inputText);
         answerBox.setMargin(inputText, new Insets(5, solutionBox.getPrefWidth()/4, 5, solutionBox.getPrefWidth()/4));
